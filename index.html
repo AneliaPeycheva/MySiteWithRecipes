@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="nav-container">
+            <div class="top-bar">
+                <div class="logo">Готви с мен</div>
+                <div class="menu-holder">
+                    <ul class="top-menu">           
+                        <a href=""><li class="menu-item" ><span class="active">Начало</span></li> </a>                          
+                        <a href="recipes.html"><li class="menu-item" ><span>Рецепти</span></li></a>
+                        <a href="about.html"><li class="menu-item" ><span>За мен</span></li></a>                           
+                    </ul>                               
+                </div>
+                <div class="nav-icon" onclick="showSideMenu()"></div> 
+                <div class="side-slide">
+                    <div class="close-wrapper">
+                        <div class="icon close" onclick="hideSideMenu()"></div>
+                    </div>
+                    <ul class="vertical-menu">
+                        <a href=""><li class="menu-item" ><span class="active">Начало</span></li> </a>                          
+                        <a href="recipes.html"><li class="menu-item" ><span>Рецепти</span></li></a>
+                        <a href="about.html"><li class="menu-item" ><span>За мен</span></li></a>     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section intro">         
+            <div class="section-holder">
+                <div class="column">
+                    <div class="title xs black upper xbold">Добре дошли</div>
+                    <div class="title xl ">Лесни рецепти за всякакви случаи</div>     
+                    <hr class="no-line">   
+                    <div class="plain-text">
+                        Не всеки може да бъде майстор готвач, но всеки може да се научи да готви вкусно и полезно.
+                        Готвенето е изкуство и още нещо, което всеки сам трябва да откриe.
+                    </div>                            
+                    <a href="about.html">
+                        <div class="btn theme">
+                            <div class="btn-label">За нас</div>   
+                        <div class="btn-icon-holder">
+                            <div class="btn-icon next"></div>   
+                        </div>                             
+                    </div>    
+                    </a>             
+                </div>
+            </div>                      
+        </div>
+        <div class="section home-recipes">
+            <div class="section-holder">
+                <div class="column">
+                    <div class="title l">Какво ново на масата</div>
+                </div>
+                <div class="column right">
+                    <div class="column-content">                 
+                        <a href="recipes.html"><span class="title s">Покажи всички рецепти</span></a>
+                        <a href="recipes.html"> <div class="icon book"></div></a>  
+                    </div>                    
+                </div>           
+                <div class="recipes-holder" id = "recipes">                    
+                    <!-- <div class="recipe-card">
+                        <div class="image-holder">
+                            <a href="">
+                                <div class="image"></div>
+                            </a>
+                        </div>
+                        <div class="description-holder">
+                            <div class="description-head title s">date</div>
+                            <div class="title m">title</div>
+                            <p>desc</p>
+                            <div class="description-footer-holder">
+                                <div class="more-holder">
+                                    <div class="icon more"></div>
+                                    <a href="recipe.html">
+                                        <span class="title s">Прочети още</span>
+                                    </a>                         
+                                </div>                                
+                            </div>                              
+                        </div>
+                    </div>        -->
+                </div>              
+                <div class="other-recipes">
+                    <div class="title xs themecolor upper xbold">Виж това</div>
+                    <div class="title xl white">Други рецепти</div>
+                    <hr class="no-line">   
+                    <a href="recipes.html">
+                        <div class="btn theme">
+                            <div class="btn-label">Покажи всички</div> 
+                        <div class="btn-icon-holder">
+                            <div class="btn-icon next"></div>   
+                        </div>                             
+                    </div>   
+                    </a>                     
+                </div>    
+            </div>       
+        </div>
+        <div class="section about">
+            <div class="section-holder">
+                    <div class="column">
+                        <div class="about-holder">
+                            <div class="title xs themecolor upper xbold">За нас</div>
+                            <div class="title xl white">Естествени продукти и ароматни съставки</div>        
+                            <hr class="no-line s">                   
+                            <div class="plain-text white">Замислете се за всички онези неща, които ви доставят истинско удоволствие,
+                                погледнете на тях от нов ъгъл и се впуснете в своето вкусно приключение.
+                            </div>
+                            <hr class="no-line">
+                            <a href="./about.html">
+                                <div class="btn theme">
+                                    <div class="btn-label">Прочети още</div>   
+                                    <div class="btn-icon-holder">
+                                       <div class="btn-icon next"></div>   
+                                    </div>                             
+                                </div>    
+                            </a>   
+                        </div>
+                    </div>
+                    <hr class="no-line">  
+                    <hr class="line">  
+                    <hr class="no-line">  
+                    <div class="column one-fourth">
+                        <div class="about-category">
+                            <div class="about-category-image-holder">
+                                <div class="image-holder">
+                                    <div class="category-image salad"></div>
+                                </div>
+                            </div>
+                            <hr class="no-line"> 
+                            <div class="title m white">Свежи салати</div>
+                            <div class="plain-text white">Lorem ipsum dolor, sit 
+                                amet consectetur adipisicing elit 
+                            </div>                                
+                        </div>
+                    </div>
+                    <div class="column one-fourth">
+                        <div class="about-category">
+                            <div class="about-category-image-holder">
+                                <div class="image-holder">
+                                    <div class="category-image cupcake"></div>
+                                </div>
+                            </div>
+                            <hr class="no-line"> 
+                            <div class="title m white">Десерти</div>
+                            <div class="plain-text white">Lorem ipsum dolor, sit 
+                                amet consectetur adipisicing elit 
+                            </div>                                
+                        </div>
+                    </div>
+                    <div class="column one-fourth">
+                        <div class="about-category">
+                            <div class="about-category-image-holder">
+                                <div class="image-holder">
+                                    <div class="category-image home"></div>
+                                </div>
+                            </div>
+                            <hr class="no-line"> 
+                            <div class="title m white">Домашна храна</div>
+                            <div class="plain-text white">Lorem ipsum dolor, sit 
+                                amet consectetur adipisicing elit 
+                            </div>                                
+                        </div>
+                    </div>
+                    <div class="column one-fourth">
+                        <div class="about-category">
+                            <div class="about-category-image-holder">
+                                <div class="image-holder">
+                                    <div class="category-image spice"></div>
+                                </div>
+                            </div>
+                            <hr class="no-line"> 
+                            <div class="title m white">Подправки</div>
+                            <div class="plain-text white">Lorem ipsum dolor, sit 
+                                amet consectetur adipisicing elit 
+                            </div>                                
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+        <div class="section testimonials">                      
+            <div class="section-holder"> 
+                <div class="testimonials-holder">
+                    <div class="title xl">Вкусни мисли</div>
+                </div>                   
+                <div class="slider">
+                    <div class="slider-item">
+                        <div class="author-image-holder">
+                            <div class="author-image author1"></div>
+                        </div>
+                        <div class="blockquote-holder">
+                            <div class="blockquote">Добрият готвач е като магьосник, който превръща прахоляка на всекидневието в златен прашец.
+                            </div>                                 
+                        </div>   
+                        <div class="dots-row">
+                            <div class="dots-holder">
+                                <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                            </div>                     
+                        </div>
+                        <div class="author-name-holder">
+                            <div class="title s"></div>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="author-image-holder">
+                            <div class="author-image author2"></div>
+                        </div>
+                        <div class="blockquote-holder">
+                            <div class="blockquote"> Домът не може да се счита за дом, освен ако не съдържа храна и огън, както за тялото, така и за разума.
+                            </div>                                 
+                        </div>   
+                        <div class="dots-row">
+                            <div class="dots-holder">
+                                <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                            </div>                     
+                        </div>
+                        <div class="author-name-holder">
+                            <div class="title s">Маргарет Фулър</div>
+                        </div>                   
+                    </div>
+                    <div class="slider-item">
+                        <div class="author-image-holder">
+                            <div class="author-image author3"></div>
+                        </div>
+                        <div class="blockquote-holder">
+                            <div class="blockquote">Добрата храна много често, дори най-често, е простата храна.
+                            </div>                                 
+                        </div>   
+                        <div class="dots-row">
+                            <div class="dots-holder">
+                                <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                            </div>                     
+                        </div>
+                        <div class="author-name-holder">
+                            <div class="title s"></div>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="author-image-holder">
+                            <div class="author-image author4"></div>
+                        </div>
+                        <div class="blockquote-holder">
+                            <div class="blockquote">Готварството не е химия. То е изкуство. То изисква инстинкт и вкус, а не точни мерки!
+                           </div>                              
+                        </div>
+                        <div class="dots-row">
+                            <div class="dots-holder">
+                                <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                            </div>                     
+                        </div>
+                        <div class="author-name-holder">
+                            <div class="title s"></div>
+                        </div>  
+                    </div>                   
+                </div>
+                <div class="slider-pagination">
+                    <ul class="slick-list">
+                        <li class="slick themecolor">                            
+                                <div class="slick-image" onclick="currentSlide(1)"></div>                           
+                        </li>
+                        <li class="slick themecolor">                        
+                                <div class="slick-image" onclick="currentSlide(2)"></div>                      
+                        </li>
+                        <li class="slick themecolor">                       
+                                <div class="slick-image" onclick="currentSlide(3)")></div>                     
+                        </li>
+                        <li class="slick themecolor">                       
+                                <div class="slick-image" onclick="currentSlide(4)"></div>                   
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section footer">
+            <div class="widgets-holder">
+                <div class="section-holder">
+                    <div class="column one-fourth">
+                        <ul class="widget-list">
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Сезонът на..</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Всеки ден</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Вашият уикенд</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Здравословно</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Избрано</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column one-fourth">
+                        <ul class="widget-list">
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Вегетариански</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Риба и морски дарове</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Печива</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Десерти</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Напитки</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column one-fourth">
+                        <ul class="widget-list">
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">5 идеи</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Готово за 20мин</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Празнично меню</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Нови тенденции</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">За деца</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column one-fourth">
+                        <div class="title m">Готви с мен</div>
+                        <div class="plain-text gray">Пловдив
+                        </div>
+                        <div class="plain-text gray">
+                            <br>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <div class="section-holder">
+                    <div class="title xs gray">&copy; 2021 Muffin-Group</div>                   
+                </div>                
+            </div>
+        </div>       
+        
+    </div>
+</body>
+<script>   
+        
+    function showSideMenu() {
+        let sidemenu = document.getElementsByClassName('side-slide')[0];
+        let content = document.getElementsByClassName('content')[0];
+        sidemenu.classList.add("active");
+        content.classList.add("active");
+    }
+
+    function hideSideMenu() {
+        let sidemenu = document.getElementsByClassName('side-slide')[0];
+        let content = document.getElementsByClassName('content')[0];
+        sidemenu.classList.remove("active");
+        content.classList.remove("active");
+    }
+
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }   
+
+    docReady(function() {
+    // DOM is loaded and ready for manipulation here  
+    getNewestRecepies();
+    });
+
+    function getNewestRecepies() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {          
+                let recipes = document.getElementById('recipes');               
+                let json_obj = JSON.parse(xhttp.responseText);    
+                console.log(json_obj['newest']);  
+                let recipeHTML = "";
+                for (let i = 0; i < json_obj['newest'].length; i++) {                                                                                    
+                    recipeHTML += '<div class="recipe-card">';                                                              
+                    recipeHTML += '<div class="image-holder"> <a href="recipe.html?uid=' + json_obj['newest'][i]['uid'] + '"> <div class="image" style="background-image:url(' + 'panel/assets/images/recipe-' + json_obj['newest'][i]['uid'] + '-image1' + '.jpeg' + ')"></div></a> </div>';
+                    recipeHTML += '<div class="description-holder">';      
+                    recipeHTML += '<div class="icon clock">' + '</div>';   
+                    recipeHTML += '<div class="description-head title s">' + json_obj['newest'][i]['data'] + 'г.' + '</div>';
+                    recipeHTML += '<a href="recipe.html?uid=' + json_obj['newest'][i]['uid'] + '"><div class="title m">' + json_obj['newest'][i]['title'] + '</div></a>';
+                    recipeHTML += '<p>' + json_obj['newest'][i]['description'] + '</p>';
+                    recipeHTML += '<div class="description-footer-holder"><div class="more-holder"><div class="icon more"></div><a href="recipe.html?uid=' + json_obj['newest'][i]['uid'] + '"><span class="title s">Прочети още</span></a></div> </div>';
+                    recipeHTML += '</div>';
+                    recipeHTML += '</div>';             
+                }
+                recipes.innerHTML = recipeHTML;
+            }
+        };
+        xhttp.open("GET", "api/service.php?action=get_newest_recipes", true);
+        xhttp.send();
+    }
+
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        var i;
+        let slides = document.getElementsByClassName("slider-item"); 
+        let dots = document.getElementsByClassName("slick-image");   
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000);
+    }
+   
+</script>
+</html>

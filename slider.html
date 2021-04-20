@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carousel</title>
+</head>
+<body>
+    <div class="section testimonials">                      
+        <div class="section-holder"> 
+            <div class="testimonials-holder">
+                <div class="title xl">Testimonials</div>
+            </div>                   
+            <div class="slider">
+                <div class="slider-item">
+                    <img src="https://s3.tproger.ru/uploads/2020/07/field.jpg">
+                </div>
+                <div class="slider-item">
+                    <img src="https://s3.tproger.ru/uploads/2020/07/rose.jpg">
+                </div>
+                <div class="slider-item">
+                    <img src="https://s3.tproger.ru/uploads/2020/07/leaf.jpg">
+                </div>               
+                <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="slider-pagination">
+                <ul class="slick-list">
+                    <li class="slick themecolor">                            
+                            <div class="slick-image" onclick="currentSlide(1)"></div>                           
+                    </li>
+                    <li class="slick themecolor">                        
+                            <div class="slick-image" onclick="currentSlide(2)"></div>                      
+                    </li>
+                    <li class="slick themecolor">                       
+                            <div class="slick-image" onclick="currentSlide(3)")></div>                     
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;  
+        showSlides(slideIndex);
+      
+        function nextSlide() {
+            showSlides(slideIndex += 1);
+        }
+    
+        function previousSlide() {
+            showSlides(slideIndex -= 1);  
+        }
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+     
+        function showSlides(n) {
+            let i;      
+            let slides = document.getElementsByClassName("slider-item"); 
+            let dots = document.getElementsByClassName("slick-image");
+            if (n > slides.length) {
+            slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";     
+        }
+    
+            
+            // var slideIndex = 0;
+            // showSlides();
+    
+            // function showSlides() {
+            //     var i;
+            //     var slides = document.getElementsByClassName("mySlides");
+            //     for (i = 0; i < slides.length; i++) {
+            //         slides[i].style.display = "none";
+            //     }
+            //     slideIndex++;
+            //     if (slideIndex > slides.length) {slideIndex = 1}
+            //     slides[slideIndex-1].style.display = "block";
+            //     setTimeout(showSlides, 2000); // Change image every 2 seconds
+            // }
+       
+    </script>
+</body>
+</html>

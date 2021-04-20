@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="section testimonials">                      
+        <div class="section-holder"> 
+            <div class="testimonials-holder">
+                <div class="title xl">Вкусни мисли</div>
+            </div>                   
+            <div class="slider">
+                <div class="slider-item">
+                    <div class="author-image-holder">
+                        <div class="author-image author1"></div>
+                    </div>
+                    <div class="blockquote-holder">
+                        <div class="blockquote">Добрият готвач е като магьосник, който превръща прахоляка на всекидневието в златен прашец.
+                        </div>                                 
+                    </div>   
+                    <div class="dots-row">
+                        <div class="dots-holder">
+                            <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                        </div>                     
+                    </div>
+                    <div class="author-name-holder">
+                        <div class="title s">Brandon Ross</div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="author-image-holder">
+                        <div class="author-image author2"></div>
+                    </div>
+                    <div class="blockquote-holder">
+                        <div class="blockquote"> Домът не може да се счита за дом, освен ако не съдържа храна и огън, както за тялото, така и за разума.
+                        </div>                                 
+                    </div>   
+                    <div class="dots-row">
+                        <div class="dots-holder">
+                            <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                        </div>                     
+                    </div>
+                    <div class="author-name-holder">
+                        <div class="title s">Lisa May</div>
+                    </div>                   
+                </div>
+                <div class="slider-item">
+                    <div class="author-image-holder">
+                        <div class="author-image author3"></div>
+                    </div>
+                    <div class="blockquote-holder">
+                        <div class="blockquote"> Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, 
+                            suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. 
+                            Nullam wisi ultricies.
+                        </div>                                 
+                    </div>   
+                    <div class="dots-row">
+                        <div class="dots-holder">
+                            <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                        </div>                     
+                    </div>
+                    <div class="author-name-holder">
+                        <div class="title s">Bill Ross</div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="author-image-holder">
+                        <div class="author-image author4"></div>
+                    </div>
+                    <div class="blockquote-holder">
+                        <div class="blockquote"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Praesentium libero deserunt est odio dolores asperiores laboriosam incidunt maxime 
+                            explicabo consequuntur aspernatur, doloremque distinctio quos esse, accusantium voluptatem, 
+                            magnam earum voluptate!
+                       </div>                              
+                    </div>
+                    <div class="dots-row">
+                        <div class="dots-holder">
+                            <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                        </div>                     
+                    </div>
+                    <div class="author-name-holder">
+                        <div class="title s">Berta Rossini</div>
+                    </div>  
+                </div>                   
+            </div>
+            <div class="slider-pagination">
+                <ul class="slick-list">
+                    <li class="slick themecolor">                            
+                            <div class="slick-image" onclick="currentSlide(1)"></div>                           
+                    </li>
+                    <li class="slick themecolor">                        
+                            <div class="slick-image" onclick="currentSlide(2)"></div>                      
+                    </li>
+                    <li class="slick themecolor">                       
+                            <div class="slick-image" onclick="currentSlide(3)")></div>                     
+                    </li>
+                    <li class="slick themecolor">                       
+                            <div class="slick-image" onclick="currentSlide(4)"></div>                   
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+    <script>    
+    
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        var i;
+        let slides = document.getElementsByClassName("slider-item"); 
+        let dots = document.getElementsByClassName("slick-image");   
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000);
+    }
+    </script>
+</body>
+
+</html>
+

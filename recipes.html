@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Recipes</title>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="nav-container">
+            <div class="top-bar">
+                <div class="logo">Готви с мен</div>
+                <div class="menu-holder">
+                    <ul class="top-menu">           
+                        <a href="index.html"><li class="menu-item" ><span >Начало</span></li> </a>                          
+                        <a href=""><li class="menu-item" ><span class="active">Рецепти</span></li></a>
+                        <a href="about.html"><li class="menu-item" ><span>За мен</span></li></a>                           
+                    </ul>                               
+                </div>
+                <div class="nav-icon" onclick="showSideMenu()"></div> 
+                <div class="side-slide">
+                    <div class="close-wrapper">
+                        <div class="icon close" onclick="hideSideMenu()"></div>
+                    </div>
+                    <ul class="vertical-menu">
+                        <a href="index.html"><li class="menu-item" ><span >Начало</span></li> </a>                          
+                        <a href=""><li class="menu-item" ><span class="active">Рецепти</span></li></a>
+                        <a href="about.html"><li class="menu-item" ><span>За мен</span></li></a>          
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" id = "top">
+        <div class="section intro-recipes">
+            <div class="section-holder">
+                <div class="title xs themecolor upper">Рецепти</div>
+                <div class="title l">Открийте нашите прекрасни рецепти</div>
+            </div>            
+        </div>
+        <div class="section filter-recipes">
+            <div class="section-holder">
+                <ul class="filters-buttons">
+                    <li class="title xs gray">Търсене по</li>
+                    <!-- <li class="categories">
+                        <div>
+                            <div class="icon doc"></div>
+                            <span class="title xs" >Категории</span>
+                            <div class="icon down"></div>
+                        <div>
+                    </li> -->
+                    <li class="dates">
+                        <div onclick = "openSearchForm()">                         
+                            <span class="title xs" >Ключови думи</span>
+                            <div class="icon down"></div>
+                        </div>
+                    </li>
+                    <li class="ingredients">
+                        <div onclick = "openImgredientSearchForm()">                         
+                            <span class="title xs" >Съставка</span>
+                            <div class="icon down"></div>
+                        </div>
+                    </li>
+                    <li class="show-all">                       
+                        <span class="title xs themecolor" onclick="getRecipes(1)">Виж всички</span>
+                    </li>
+                </ul>
+                
+            </div>            
+        </div>
+        <div class="section filter-form-holder">
+            <div class="section-holder">
+                <div class="search-key-words-holder">                    
+                    <input class="key" type="text" name="fname" placeholder="Въведете ключова дума:">
+                    <div class="btn theme">
+                        <div class="btn-label"  onclick="findRecipes(1,'key')">Търси</div> 
+                        <div class="btn-icon-holder" onclick="closeSearchForm()">
+                            <div class="btn-icon white-close"></div>   
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="section filter-ingredient-form-holder">
+            <div class="section-holder">
+                <div class="search-key-words-holder">                    
+                    <input class="ingredient" type="text" name="fname" placeholder="Въведете съставка:">
+                    <div class="btn theme">
+                        <div class="btn-label"  onclick="findRecipes(1,'ingredient')">Търси</div> 
+                        <div class="btn-icon-holder" onclick="closIngredientSearchForm()">
+                            <div class="btn-icon white-close"></div>   
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <div class="section recipes" >
+            <div class="section-holder">                 
+                <div class="recipes-holder" id = "recipes-all">                 
+                </div>           
+            </div>       
+        </div>
+        <div class="section paging">
+            <div class="paging-holder" id = "paging">
+                <!-- <span class="page active" >1</span>
+                <span class="page" >2</span>
+                <span class="page" >3</span> -->
+            </div>
+            <a href="#top" target="_top">
+                <div class="move-to-top"> </div>    
+            </a>        
+        </div>       
+        <div class="section footer">
+            <div class="widgets-holder">
+                <div class="section-holder">
+                    <div class="column one-fourth">
+                        <ul class="widget-list">
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Сезонът на..</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Всеки ден</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Вашият уикенд</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Здравословно</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Избрано</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column one-fourth">
+                        <ul class="widget-list">
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Вегетариански</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Риба и морски дарове</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Печива</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Десерти</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Напитки</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column one-fourth">
+                        <ul class="widget-list">
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">5 идеи</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Готово за 20мин</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Празнично меню</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">Нови тенденции</span></a>
+                            </li>
+                            <li class="widget-item">
+                                <span class="title s themecolor">→</span>
+                                <a href=""><span class="title s gray">За деца</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column one-fourth">
+                        <div class="title m">Готви с мен</div>
+                        <div class="plain-text gray">Пловдив
+                        </div>
+                        <div class="plain-text gray">
+                            <br>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <div class="section-holder">
+                    <div class="title xs gray">&copy; 2021 Muffin-Group</div>                   
+                </div>                
+            </div>
+        </div>            
+    </div>
+      
+</body>
+<script>
+   function showSideMenu() {
+        let sidemenu = document.getElementsByClassName('side-slide')[0];
+        let content = document.getElementsByClassName('content')[0];
+        sidemenu.classList.add("active");
+        content.classList.add("active");
+    }
+
+    function hideSideMenu() {
+        let sidemenu = document.getElementsByClassName('side-slide')[0];
+        let content = document.getElementsByClassName('content')[0];
+        sidemenu.classList.remove("active");
+        content.classList.remove("active");
+    }
+
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }   
+
+    docReady(function() {
+        // DOM is loaded and ready for manipulation here   
+        getRecipes(1);              
+    });
+  
+
+    function getRecipes(page) {
+        let num_recipes_on_page = 9;  
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {          
+                let recipes = document.getElementById('recipes-all');               
+                let json_obj = JSON.parse(xhttp.responseText);    
+                let recipesCount = json_obj['recipes_count'];              
+                let recipeHTML = "";
+                for (let i = 0; i < json_obj['recipes'].length; i++) {                                                                 
+                    recipeHTML += '<div class="recipe-card">';
+                    recipeHTML += '<div class="image-holder"> <a href="recipe.html?uid=' + json_obj['recipes'][i]['uid'] + '"> <div class="image" style="background-image:url(' + 'panel/assets/images/recipe-' + json_obj['recipes'][i]['uid'] + '-image1' + '.jpeg' + ')"></div></a> </div>';                  
+                    recipeHTML += '<div class="description-holder">';                   
+                    recipeHTML += '<div class="description-head title s">' + json_obj['recipes'][i]['data'] + '</div>';
+                    recipeHTML += '<a href="recipe.html?uid=' + json_obj['recipes'][i]['uid'] + '"><div class="title m">' + json_obj['recipes'][i]['title'] + '</div></a>';
+                    recipeHTML += '<p>' + json_obj['recipes'][i]['description'] + '</p>';
+                    recipeHTML += '<div class="description-footer-holder"><div class="more-holder"><div class="icon more"></div><a href="recipe.html?uid=' + json_obj['recipes'][i]['uid'] + '"><span class="title s">Прочети още</span></a></div> </div>';
+                    recipeHTML += '</div>';
+                    recipeHTML += '</div>';             
+                }
+                recipes.innerHTML = recipeHTML;    
+    
+                let numberOfPages =  Math.ceil(recipesCount / num_recipes_on_page);              
+                let paging = document.getElementById('paging');
+                let pagingHTML = "";            
+                for (let i = 1; i <= numberOfPages; i++ ){
+                    if (i == page) {
+                        pagingHTML += '<a href="#top" target="_top">' + '<span class="page active" onclick="getRecipes(' + i + ')">' + i + '</span>' + '</a>';                      
+                    } else {
+                        pagingHTML += '<a href="#top" target="_top">' + '<span class="page" onclick="getRecipes(' + i + ')">' + i + '</a>';
+                    }                 
+                }
+                paging.innerHTML = pagingHTML;
+            }
+        };
+        xhttp.open("GET", "api/service.php?action=get_current_page_recipes&page=" + page, true);
+        xhttp.send();
+    }   
+
+    function openSearchForm() {    
+        let formIngredient = document.getElementsByClassName('filter-ingredient-form-holder')[0];
+        if (formIngredient.classList.contains('active') )
+        {
+            formIngredient.classList.remove('active'); 
+        }         
+        let form = document.getElementsByClassName('filter-form-holder')[0];
+        let input = document.querySelector("#top > div.section.filter-form-holder > div > div > input[type=text]");
+        input.value = '';
+        form.classList.add('active');             
+    }
+
+    function closeSearchForm() {    
+        let form = document.getElementsByClassName('filter-form-holder')[0];
+        form.classList.remove('active');      
+        getRecipes(1);         
+    }
+    
+    function openImgredientSearchForm() { 
+        let form = document.getElementsByClassName('filter-form-holder')[0];  
+        if ( form.classList.contains('active') )
+        {
+           form.classList.remove('active'); 
+        }      
+        let formIngredient = document.getElementsByClassName('filter-ingredient-form-holder')[0];
+        let input = document.querySelector("#top > div.section.filter-ingredient-form-holder > div > div > input[type=text]");
+        input.value = '';
+        formIngredient.classList.add('active');             
+    }
+
+    function closIngredientSearchForm() {    
+        let form = document.getElementsByClassName('filter-ingredient-form-holder')[0];
+        form.classList.remove('active');      
+        getRecipes(1);         
+    }
+
+
+    function hideSearchForm() {    
+        let form = document.getElementsByClassName('filter-form-holder')[0];
+        form.classList.remove('active'); 
+        let formIngredient = document.getElementsByClassName('filter-ingredient-form-holder')[0];
+        formIngredient.classList.remove('active'); 
+    }
+
+    function findRecipes(page,word) {
+        let num_recipes_on_page = 9;  
+        // let key = document.getElementsByTagName('input')[0].value;  
+        let key = document.getElementsByClassName(word)[0].value;  
+        console.log(key);
+        console.log(word);
+        if (key) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {                 
+                    let recipes = document.getElementById('recipes-all'); 
+                    let paging = document.getElementById('paging');             
+                    let json_obj = JSON.parse(xhttp.responseText);   
+                    let recipesCount = json_obj['recipes_count'];    
+                    if (json_obj['recipes'].length > 0 ) {
+                        let recipeHTML = "";
+                        for (let i = 0; i < json_obj['recipes'].length; i++) {                                                                 
+                            recipeHTML += '<div class="recipe-card">';
+                            recipeHTML += '<div class="image-holder"> <a href="recipe.html?uid=' + json_obj['recipes'][i]['uid'] + '"> <div class="image" style="background-image:url(' + 'panel/assets/images/recipe-' + json_obj['recipes'][i]['uid']  +  '-image1' + '.jpeg' + ')"></div></a> </div>';
+                            recipeHTML += '<div class="description-holder">';                   
+                            recipeHTML += '<div class="description-head title s">' + json_obj['recipes'][i]['data'] + '</div>';
+                            recipeHTML += '<a href="recipe.html?uid=' + json_obj['recipes'][i]['uid'] + '"><div class="title m">' + json_obj['recipes'][i]['title'] + '</div></a>';
+                            recipeHTML += '<p>' + json_obj['recipes'][i]['description'] + '</p>';
+                            recipeHTML += '<div class="description-footer-holder"><div class="more-holder"><div class="icon more"></div><a href="recipe.html?uid=' + json_obj['recipes'][i]['uid'] + '"><span class="title s">Прочети още</span></a></div> </div>';
+                            recipeHTML += '</div>';
+                            recipeHTML += '</div>';             
+                        }
+                        recipes.innerHTML = recipeHTML;
+
+                        let numberOfPages =  Math.ceil(recipesCount / num_recipes_on_page);                                
+                        let pagingHTML = "";            
+                        for (let i = 1; i <= numberOfPages; i++ ){
+                            if (i == page) {
+                                pagingHTML += '<span class="page active" onclick="findRecipes(' + i + ')">' + i + '</span>';                      
+                            } else {
+                                pagingHTML += '<span class="page" onclick="findRecipes(' + i + ')">' + i + '</span>';
+                            }                 
+                        }
+                        paging.innerHTML = pagingHTML;
+                    } else {
+                        recipes.innerHTML = 'Няма намерени';
+                        paging.innerHTML = '';
+                    }                
+                    hideSearchForm();                
+                }
+            };
+            if (word == 'ingredient') {
+                xhttp.open("GET", "api/service.php?action=find_recipes_by_ingredient&key=" + key + "&page=" + page, true);
+                xhttp.send();
+            } else {
+                xhttp.open("GET", "api/service.php?action=find_recipes&key=" + key + "&page=" + page, true);
+                xhttp.send();
+            }
+           
+        }
+        
+    }
+   
+</script>
+</html>
